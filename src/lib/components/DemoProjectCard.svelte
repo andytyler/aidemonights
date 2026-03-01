@@ -74,8 +74,8 @@
 
 </script>
 
-<article class="overflow-hidden border dn-border dn-bg-surface">
-	<div class="grid gap-4 border-b p-5 md:grid-cols-[auto,1fr] dn-border">
+<article class="overflow-hidden border border-border bg-card">
+	<div class="grid gap-4 border-b p-5 md:grid-cols-[auto,1fr] border-border">
 			<div class="flex items-start gap-4">
 			{#if profileLoadingState === 'ready' && profileImage}
 				<img
@@ -86,16 +86,16 @@
 				/>
 			{:else}
 				<div
-					class="h-14 w-14 rounded-full dn-color-bg dn-border"
+					class="h-14 w-14 rounded-full bg-muted text-muted-foreground border-border"
 					aria-hidden="true"
 				></div>
 			{/if}
 			<div>
-				<h3 class="text-base font-semibold dn-text">
+				<h3 class="text-base font-semibold text-foreground">
 					{demo.eventNumber ? `#${demo.eventNumber}` : 'Event'} {demo.name}
 				</h3>
-				<p class="text-sm dn-accent">{demo.title}</p>
-				<p class="mt-1 text-xs dn-muted">{demo.description}</p>
+				<p class="text-sm text-accent">{demo.title}</p>
+				<p class="mt-1 text-xs text-muted-foreground">{demo.description}</p>
 				{#if hasSocials}
 					<div class="mt-2 flex flex-wrap gap-3 text-xs">
 						{#if linkedInUrl}
@@ -103,7 +103,7 @@
 								href={linkedInUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="underline-offset-4 dn-muted"
+								class="underline-offset-4 text-muted-foreground"
 							>
 								LinkedIn
 							</a>
@@ -113,7 +113,7 @@
 								href={twitterUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="underline-offset-4 dn-muted"
+								class="underline-offset-4 text-muted-foreground"
 							>
 								Twitter
 							</a>
@@ -134,10 +134,10 @@
 						</div>
 					{/if}
 					<div class="min-w-0">
-						<p class="text-xs dn-muted">{preview.domain}</p>
-						<p class="mt-1 text-sm dn-text">{preview.title || demo.title}</p>
+						<p class="text-xs text-muted-foreground">{preview.domain}</p>
+						<p class="mt-1 text-sm text-foreground">{preview.title || demo.title}</p>
 						{#if preview.description}
-							<p class="mt-1 text-xs dn-muted">{preview.description}</p>
+							<p class="mt-1 text-xs text-muted-foreground">{preview.description}</p>
 						{/if}
 					</div>
 				</div>
@@ -147,12 +147,12 @@
 				href={projectUrl}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="block p-4 text-xs transition-colors dn-muted"
+				class="block p-4 text-xs transition-colors text-muted-foreground"
 			>
 				View project →
 			</a>
 		{/if}
 	{:else}
-		<div class="p-4 text-xs dn-muted">No project URL provided.</div>
+		<div class="p-4 text-xs text-muted-foreground">No project URL provided.</div>
 	{/if}
 </article>

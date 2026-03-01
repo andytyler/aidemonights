@@ -59,23 +59,23 @@
 <div class="overflow-x-auto">
 	<table class="w-full text-left text-sm border-collapse">
 		<thead>
-			<tr class="dn-divider">
+			<tr class="border-b border-border">
 				{#if showAvatar}
-					<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">
+					<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
 						Person
 					</th>
 				{/if}
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
 					{columnMode === 'night' ? 'Night' : 'Date'}
 				</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Name</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Demo</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Link</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">Name</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">Demo</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">Link</th>
 			</tr>
 		</thead>
 		<tbody>
 			{#each demos as demo}
-				<tr class="dn-divider">
+				<tr class="border-b border-border">
 					{#if showAvatar}
 						<td class="px-4 py-3">
 							{#if profileImageStatus[avatarKey(demo)] === 'ready' && profileImages[avatarKey(demo)]}
@@ -86,17 +86,17 @@
 									loading="lazy"
 								/>
 							{:else}
-								<div class="h-10 w-10 rounded-full border dn-border dn-bg-surface"></div>
+								<div class="h-10 w-10 rounded-full border border-border bg-card"></div>
 							{/if}
 						</td>
 					{/if}
-					<td class="px-4 py-3 text-nowrap dn-muted">
+					<td class="px-4 py-3 text-nowrap text-muted-foreground">
 						{columnMode === 'night' ? `#${demo.eventNumber ?? '-'}` : formatDate(demo.date)}
 					</td>
-					<td class="px-4 py-3 dn-text">{demo.name}</td>
+					<td class="px-4 py-3 text-foreground">{demo.name}</td>
 					<td class="px-4 py-3">
-						<div class="dn-text">{demo.title}</div>
-						<div class="mt-1 text-xs dn-muted">{demo.description}</div>
+						<div class="text-foreground">{demo.title}</div>
+						<div class="mt-1 text-xs text-muted-foreground">{demo.description}</div>
 					</td>
 					<td class="px-4 py-3">
 						{#if hasDisplayUrl(demo.displayProjectUrl || '')}
@@ -104,12 +104,12 @@
 								href={demo.displayProjectUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="text-xs underline transition-colors dn-accent"
+								class="text-xs underline transition-colors text-accent"
 							>
 								View →
 							</a>
 						{:else}
-							<span class="text-xs dn-muted">Not published</span>
+							<span class="text-xs text-muted-foreground">Not published</span>
 						{/if}
 					</td>
 				</tr>

@@ -1,17 +1,9 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Header from '$lib/components/Header.svelte';
 	import SEO from '$lib/utils/seo/SEO.svelte';
 	import './layout.css';
 
 	let { children }: { children: any } = $props();
-
-	onMount(() => {
-		document.body.classList.add('dn-body');
-		return () => {
-			document.body.classList.remove('dn-body');
-		};
-	});
 </script>
 
 <svelte:head>
@@ -25,7 +17,7 @@
 
 <SEO />
 
-<div class="dn-root min-h-screen">
+<div class="theme-root min-h-screen">
 	<Header />
 	{@render children()}
 </div>

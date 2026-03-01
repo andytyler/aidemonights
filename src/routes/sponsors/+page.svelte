@@ -43,18 +43,18 @@
 </script>
 
 <!-- Hero -->
-<section class="border-b px-6 py-20 dn-border">
+<section class="border-b px-6 py-20 border-border">
 	<div class="mx-auto max-w-4xl">
 		<a
 			href="/aidemonights"
-			class="mb-6 inline-flex items-center gap-2 text-xs transition-colors dn-muted"
+			class="mb-6 inline-flex items-center gap-2 text-xs transition-colors text-muted-foreground"
 		>
 			← Back to AI Demo Nights
 		</a>
-		<h1 class="text-3xl font-bold tracking-tight md:text-5xl dn-text">
+		<h1 class="text-3xl font-bold tracking-tight md:text-5xl text-foreground">
 			Sponsor AI Demo Nights
 		</h1>
-		<p class="mt-4 text-sm leading-relaxed dn-muted">
+		<p class="mt-4 text-sm leading-relaxed text-muted-foreground">
 			We're not-for-profit and rely on sponsors to make the night happen. Your support
 			puts you in front of London's most active AI builders — engineers from frontier labs,
 			YC founders, and the people shipping real products.
@@ -63,20 +63,20 @@
 </section>
 
 <!-- Audience Stats -->
-<section class="border-b px-6 py-12 dn-border">
+<section class="border-b px-6 py-12 border-border">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium uppercase tracking-wider dn-muted">
+		<h2 class="mb-8 text-xs font-medium uppercase tracking-wider text-muted-foreground">
 			The Audience
 		</h2>
-		<div class="grid grid-cols-2 gap-px md:grid-cols-4 dn-bg-border">
+		<div class="grid grid-cols-2 gap-px md:grid-cols-4 bg-border">
 			{#each audienceStats as stat, i}
 				<div
-					class="stat-enter p-6 text-center dn-bg-surface" style={`animation-delay: ${i * 80}ms;`}
+					class="stat-enter p-6 text-center bg-card" style={`animation-delay: ${i * 80}ms;`}
 				>
-					<span class="block text-2xl font-bold md:text-3xl dn-accent">
+					<span class="block text-2xl font-bold md:text-3xl text-accent">
 						{stat.value}
 					</span>
-					<span class="mt-1 block text-[10px] uppercase tracking-wider dn-muted">
+					<span class="mt-1 block text-[10px] uppercase tracking-wider text-muted-foreground">
 						{stat.label}
 					</span>
 				</div>
@@ -86,30 +86,28 @@
 </section>
 
 <!-- Tiers -->
-<section class="border-b px-6 py-12 dn-border">
+<section class="border-b px-6 py-12 border-border">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium uppercase tracking-wider dn-muted">
+		<h2 class="mb-8 text-xs font-medium uppercase tracking-wider text-muted-foreground">
 			Sponsorship Tiers
 		</h2>
-		<div class="grid gap-px md:grid-cols-3 dn-bg-border">
+		<div class="grid gap-px md:grid-cols-3 bg-border">
 			{#each tiers as tier, i}
-				<div
-					class={`flex flex-col p-6 md:p-8 ${i === 0 ? 'dn-bg-surface' : 'dn-bg'}`}
-				>
+				<div class="flex flex-col p-6 md:p-8 bg-card">
 					<div class="flex items-center gap-3">
 						{#if i === 0}
-							<span class="inline-block h-2 w-2 dn-bg-accent"></span>
+							<span class="inline-block h-2 w-2 bg-accent"></span>
 						{/if}
 						<span
-							class={`text-sm font-semibold ${i === 0 ? 'dn-accent' : 'dn-text'}`}
+							class={`text-sm font-semibold ${i === 0 ? 'text-accent' : 'text-foreground'}`}
 						>
 							{tier.name}
 						</span>
 					</div>
 					<ul class="mt-4 flex-1 space-y-2">
 						{#each tier.includes as perk}
-							<li class="flex items-start gap-2 text-xs leading-relaxed dn-muted">
-								<span class="mt-1 shrink-0 dn-color-border">—</span>
+							<li class="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+								<span class="mt-1 shrink-0 text-border">—</span>
 								{perk}
 							</li>
 						{/each}
@@ -127,24 +125,24 @@
 			href={data.sponsorLinkedIn}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="cta-strip group relative block overflow-hidden p-6 transition-colors md:p-8 dn-bg-accent"
+			class="cta-strip group relative block overflow-hidden p-6 transition-colors md:p-8 bg-accent"
 		>
 			<div class="relative flex items-center justify-between">
 				<div>
-					<span class="text-sm font-bold dn-color-bg">
+					<span class="text-sm font-bold text-accent-foreground">
 						Get in touch
 					</span>
-					<span class="ml-3 text-xs font-medium dn-on-accent-text">
+					<span class="ml-3 text-xs font-medium text-accent-foreground">
 						DM me on LinkedIn with your company, tier, and any questions
 					</span>
 				</div>
 				<span
-					class="text-lg font-bold transition-transform duration-200 group-hover:translate-x-2 dn-color-bg"
+					class="text-lg font-bold transition-transform duration-200 group-hover:translate-x-2 text-accent-foreground"
 				>
 					→
 				</span>
 			</div>
-			<div class="dn-shimmer"></div>
+			<div class="card-shimmer"></div>
 		</a>
 	</div>
 </section>

@@ -29,9 +29,9 @@
 		}));
 </script>
 
-<div class="dn-bg-border grid grid-cols-2 gap-px md:grid-cols-3 lg:grid-cols-4">
+<div class="grid grid-cols-2 gap-px bg-border md:grid-cols-3 lg:grid-cols-4">
 	{#each photos as photo (photo.src)}
-		<div class="dn-bg-surface aspect-square overflow-hidden">
+		<div class="aspect-square overflow-hidden bg-card">
 			<enhanced:img
 				src={photo.src}
 				alt={photo.alt}

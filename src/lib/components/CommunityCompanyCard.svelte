@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="card-enter group bg-surface relative aspect-square h-full w-full overflow-hidden"
+	class="card-enter group relative aspect-square h-full w-full overflow-hidden bg-card"
 	style={`animation-delay: ${index * 50}ms;`}
 >
 	<div class="relative h-full w-full">
@@ -24,9 +24,7 @@
 				class="group/media grid h-full w-full place-items-center px-4 py-2"
 			>
 				{#if wordmark_url}
-					<div
-						class="grid h-full w-full place-items-center bg-[color:var(--dn-surface)] px-2 py-1.5"
-					>
+					<div class="grid h-full w-full place-items-center bg-card px-2 py-1.5">
 						<img
 							src={wordmark_url}
 							alt={company.name}
@@ -36,7 +34,7 @@
 					</div>
 				{:else}
 					<div
-						class="grid h-full w-full place-items-center px-2 text-center text-[10px] font-semibold tracking-wide text-[color:var(--dn-text)]"
+						class="grid h-full w-full place-items-center px-2 text-center text-[10px] font-semibold tracking-wide text-foreground"
 					>
 						{company.name}
 					</div>
@@ -44,17 +42,17 @@
 			</a>
 		</div>
 
-		<div class="absolute inset-0 flex h-full w-full flex-col justify-between p-2">
+		<div class="absolute inset-0 h-full w-full p-2">
 			{#if company.affiliation}
 				<span
-					class="inline-flex shrink-0 items-center bg-card px-1 py-0.5 text-xs font-medium tracking-wider text-accent uppercase"
+					class="inline-flex shrink-0 items-center bg-accent px-1 py-0.5 text-xs font-medium tracking-wider text-accent-foreground uppercase"
 				>
 					{company.affiliation.label}
 				</span>
 			{/if}
-			<div class="items-cente flex min-w-0 justify-center gap-1">
+			<div class="flex min-w-0 items-center justify-center gap-1">
 				<span
-					class="text-md flex min-w-0 flex-1 flex-row items-center justify-center gap-1 truncate align-middle font-medium"
+					class="flex min-w-0 flex-1 flex-row items-center justify-center gap-1 truncate align-middle text-lg font-medium text-foreground"
 				>
 					<img
 						src={favicon}
@@ -65,7 +63,7 @@
 					/>
 					{company.name}</span
 				>
-				<p class="mt-1 truncate text-xs leading-tight text-muted">
+				<p class="mt-1 truncate text-[10px] leading-tight text-muted-foreground">
 					{company.one_liner}
 				</p>
 			</div>
@@ -73,6 +71,7 @@
 	</div>
 
 	<div
-		class="dn-glow-surface-sm absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+		class="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+		style="background: linear-gradient(135deg, var(--accent-soft-3) 0%, transparent 60%);"
 	></div>
 </div>

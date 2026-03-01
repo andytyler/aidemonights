@@ -401,7 +401,7 @@
 		top: 0;
 		z-index: 50;
 		display: flex;
-		border-bottom: 1px solid var(--dn-border);
+		border-bottom: 1px solid var(--border);
 		background-color: rgba(10, 10, 10, 0.9);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
@@ -417,10 +417,10 @@
 		font-family: inherit;
 		font-size: 0.65rem;
 		letter-spacing: 0.15em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		background: transparent;
 		border: none;
-		border-right: 1px solid var(--dn-border);
+		border-right: 1px solid var(--border);
 		cursor: pointer;
 		transition: color 0.2s, background-color 0.2s;
 	}
@@ -430,13 +430,13 @@
 	}
 
 	.explore-nav button:hover {
-		color: var(--dn-accent);
+		color: var(--accent);
 		background-color: rgba(255, 69, 0, 0.05);
 	}
 
 	.nav-num {
 		font-weight: 700;
-		color: var(--dn-accent);
+		color: var(--accent);
 	}
 
 	.nav-label {
@@ -444,7 +444,7 @@
 	}
 
 	.dir-section {
-		border-bottom: 1px solid var(--dn-border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.section-header {
@@ -452,14 +452,14 @@
 		align-items: flex-start;
 		gap: 1.5rem;
 		padding: 3rem 2rem 2rem;
-		border-bottom: 1px solid var(--dn-border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.section-num {
 		font-size: 3rem;
 		font-weight: 900;
 		line-height: 1;
-		color: var(--dn-accent);
+		color: var(--accent);
 		opacity: 0.3;
 	}
 
@@ -467,14 +467,14 @@
 		font-size: 1.5rem;
 		font-weight: 700;
 		letter-spacing: 0.05em;
-		color: var(--dn-text);
+		color: var(--foreground);
 	}
 
 	.section-tags {
 		margin-top: 0.25rem;
 		font-size: 0.7rem;
 		letter-spacing: 0.1em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.explore-footer {
@@ -482,7 +482,7 @@
 		text-align: center;
 		font-size: 0.65rem;
 		letter-spacing: 0.15em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.explore-footer-note {
@@ -503,7 +503,7 @@
 		justify-content: center;
 		min-height: 70vh;
 		padding: 6rem 2rem;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.ht-hero-dots {
@@ -540,7 +540,7 @@
 		font-weight: 900;
 		line-height: 0.85;
 		text-align: center;
-		color: var(--dn-text);
+		color: var(--foreground);
 		letter-spacing: -0.03em;
 	}
 
@@ -549,7 +549,7 @@
 		margin-top: 2rem;
 		font-size: 0.7rem;
 		letter-spacing: 0.35em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Dot Variations */
@@ -557,9 +557,9 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1px;
-		background-color: var(--dn-border);
-		border-top: 1px solid var(--dn-border);
-		border-bottom: 1px solid var(--dn-border);
+		background-color: var(--border);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.ht-var {
@@ -568,7 +568,7 @@
 		align-items: center;
 		gap: 1rem;
 		padding: 2rem 1rem;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.ht-swatch {
@@ -628,7 +628,7 @@
 	.ht-var-label {
 		font-size: 0.6rem;
 		letter-spacing: 0.15em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Halftone Card */
@@ -642,7 +642,7 @@
 		display: flex;
 		max-width: 500px;
 		width: 100%;
-		border: 1px solid var(--dn-border);
+		border: 1px solid var(--border);
 		overflow: hidden;
 	}
 
@@ -665,7 +665,7 @@
 	.ht-card-eyebrow {
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-accent);
+		color: var(--accent);
 		font-weight: 600;
 	}
 
@@ -673,20 +673,20 @@
 		margin-top: 0.5rem;
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: var(--dn-text);
+		color: var(--foreground);
 	}
 
 	.ht-card-meta {
 		margin-top: 0.25rem;
 		font-size: 0.75rem;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.ht-card-body {
 		margin-top: 0.75rem;
 		font-size: 0.8rem;
 		line-height: 1.6;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Dotted Typography */
@@ -712,7 +712,7 @@
 		margin-top: 1rem;
 		font-size: 0.6rem;
 		letter-spacing: 0.1em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		opacity: 0.6;
 	}
 
@@ -746,7 +746,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.gm-hero-bg {
@@ -756,7 +756,7 @@
 		padding: 1rem;
 		font-size: 0.7rem;
 		line-height: 1.4;
-		color: var(--dn-accent);
+		color: var(--accent);
 		opacity: 0.08;
 		white-space: pre;
 		overflow: hidden;
@@ -774,7 +774,7 @@
 		font-size: clamp(4rem, 15vw, 10rem);
 		font-weight: 900;
 		line-height: 0.85;
-		color: var(--dn-text);
+		color: var(--foreground);
 		letter-spacing: -0.03em;
 		text-shadow:
 			0 0 60px rgba(255, 69, 0, 0.15),
@@ -785,7 +785,7 @@
 		margin-top: 2rem;
 		font-size: 0.7rem;
 		letter-spacing: 0.35em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.gm-scanline {
@@ -817,8 +817,8 @@
 	/* Unicode Gradient Strip */
 	.gm-gradient-strip {
 		padding: 2rem;
-		border-top: 1px solid var(--dn-border);
-		border-bottom: 1px solid var(--dn-border);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.gm-grad-label {
@@ -826,13 +826,13 @@
 		margin-bottom: 1rem;
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.gm-gradient-chars {
 		font-size: 1.2rem;
 		line-height: 1;
-		color: var(--dn-accent);
+		color: var(--accent);
 		letter-spacing: 0.05em;
 		overflow-x: auto;
 		white-space: nowrap;
@@ -848,14 +848,14 @@
 	.gm-card {
 		font-size: 0.8rem;
 		line-height: 1.5;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		margin: 0;
 		white-space: pre;
 		overflow-x: auto;
 	}
 
 	.gm-accent {
-		color: var(--dn-accent);
+		color: var(--accent);
 		font-weight: 600;
 	}
 
@@ -864,14 +864,14 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1px;
-		background-color: var(--dn-border);
-		border-top: 1px solid var(--dn-border);
-		border-bottom: 1px solid var(--dn-border);
+		background-color: var(--border);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.gm-tex {
 		padding: 1.5rem;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -881,7 +881,7 @@
 	.gm-tex-content {
 		font-size: 0.65rem;
 		line-height: 1.2;
-		color: var(--dn-accent);
+		color: var(--accent);
 		opacity: 0.4;
 		margin: 0;
 		white-space: pre;
@@ -890,14 +890,14 @@
 	.gm-tex-label {
 		font-size: 0.55rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Glyph Divider */
 	.gm-divider {
 		padding: 1rem 2rem;
 		font-size: 0.6rem;
-		color: var(--dn-accent);
+		color: var(--accent);
 		opacity: 0.15;
 		overflow: hidden;
 		white-space: nowrap;
@@ -945,7 +945,7 @@
 		font-size: clamp(4rem, 15vw, 10rem);
 		font-weight: 900;
 		line-height: 0.85;
-		color: var(--dn-accent);
+		color: var(--accent);
 		letter-spacing: -0.03em;
 		text-shadow:
 			0 0 80px rgba(255, 69, 0, 0.3),
@@ -956,14 +956,14 @@
 		margin-top: 2rem;
 		font-size: 0.7rem;
 		letter-spacing: 0.35em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		opacity: 0.7;
 	}
 
 	/* Dithered Gradients */
 	.sg-gradients {
 		padding: 2.5rem 2rem;
-		border-top: 1px solid var(--dn-border);
+		border-top: 1px solid var(--border);
 	}
 
 	.sg-grad-label {
@@ -971,7 +971,7 @@
 		margin-bottom: 1.5rem;
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.sg-grad-strip {
@@ -985,7 +985,7 @@
 		margin-bottom: 1.5rem;
 		font-size: 0.5rem;
 		letter-spacing: 0.15em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		opacity: 0.5;
 	}
 
@@ -1058,16 +1058,16 @@
 		padding: 3rem 2rem;
 		display: flex;
 		justify-content: center;
-		border-top: 1px solid var(--dn-border);
+		border-top: 1px solid var(--border);
 	}
 
 	.sg-card {
 		position: relative;
 		max-width: 500px;
 		width: 100%;
-		border: 1px solid var(--dn-border);
+		border: 1px solid var(--border);
 		overflow: hidden;
-		background-color: var(--dn-surface);
+		background-color: var(--card);
 	}
 
 	.sg-card-noise {
@@ -1088,7 +1088,7 @@
 	.sg-card-eyebrow {
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-accent);
+		color: var(--accent);
 		font-weight: 600;
 	}
 
@@ -1096,20 +1096,20 @@
 		margin-top: 0.5rem;
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: var(--dn-text);
+		color: var(--foreground);
 	}
 
 	.sg-card-meta {
 		margin-top: 0.25rem;
 		font-size: 0.75rem;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.sg-card-body {
 		margin-top: 0.75rem;
 		font-size: 0.8rem;
 		line-height: 1.6;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Grain Intensities */
@@ -1117,9 +1117,9 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1px;
-		background-color: var(--dn-border);
-		border-top: 1px solid var(--dn-border);
-		border-bottom: 1px solid var(--dn-border);
+		background-color: var(--border);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.sg-intensity {
@@ -1154,7 +1154,7 @@
 		position: relative;
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		z-index: 1;
 	}
 
@@ -1174,7 +1174,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.mi-hero-lines {
@@ -1235,7 +1235,7 @@
 		font-size: clamp(4rem, 15vw, 10rem);
 		font-weight: 900;
 		line-height: 0.85;
-		color: var(--dn-text);
+		color: var(--foreground);
 		letter-spacing: -0.03em;
 	}
 
@@ -1243,7 +1243,7 @@
 		margin-top: 2rem;
 		font-size: 0.7rem;
 		letter-spacing: 0.35em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Pattern Variations */
@@ -1251,9 +1251,9 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1px;
-		background-color: var(--dn-border);
-		border-top: 1px solid var(--dn-border);
-		border-bottom: 1px solid var(--dn-border);
+		background-color: var(--border);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.mi-var {
@@ -1262,7 +1262,7 @@
 		align-items: center;
 		gap: 1rem;
 		padding: 2rem 1rem;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.mi-swatch {
@@ -1343,7 +1343,7 @@
 	.mi-var-label {
 		font-size: 0.55rem;
 		letter-spacing: 0.15em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		text-align: center;
 	}
 
@@ -1358,9 +1358,9 @@
 		position: relative;
 		max-width: 500px;
 		width: 100%;
-		border: 1px solid var(--dn-border);
+		border: 1px solid var(--border);
 		overflow: hidden;
-		background-color: var(--dn-bg);
+		background-color: var(--card);
 	}
 
 	.mi-card-pattern {
@@ -1403,7 +1403,7 @@
 	.mi-card-eyebrow {
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-accent);
+		color: var(--accent);
 		font-weight: 600;
 	}
 
@@ -1411,33 +1411,33 @@
 		margin-top: 0.5rem;
 		font-size: 1.25rem;
 		font-weight: 700;
-		color: var(--dn-text);
+		color: var(--foreground);
 	}
 
 	.mi-card-meta {
 		margin-top: 0.25rem;
 		font-size: 0.75rem;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	.mi-card-body {
 		margin-top: 0.75rem;
 		font-size: 0.8rem;
 		line-height: 1.6;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 	}
 
 	/* Interactive Moiré */
 	.mi-interactive {
 		padding: 2rem;
-		border-top: 1px solid var(--dn-border);
+		border-top: 1px solid var(--border);
 	}
 
 	.mi-interactive-note {
 		margin-bottom: 1rem;
 		font-size: 0.6rem;
 		letter-spacing: 0.2em;
-		color: var(--dn-muted);
+		color: var(--muted-foreground);
 		text-align: center;
 	}
 
@@ -1446,7 +1446,7 @@
 		width: 100%;
 		height: 300px;
 		overflow: hidden;
-		border: 1px solid var(--dn-border);
+		border: 1px solid var(--border);
 		cursor: crosshair;
 	}
 
