@@ -10,11 +10,13 @@
 	import type { PageServerData } from './$types';
 
 	let { data }: { data: PageServerData } = $props();
+	const nextEventUrl = data.nextEvent.lumaUrl ?? 'https://lu.ma/london-ai';
+	const nextEventTitle = data.nextEvent.title ?? 'AI Demo Nights';
 
 	const aboutMarkdown = `
-	AI Demo Nights is a community of **Engineers**, Builders & Super early founders, we run nights where people a curated set of builders show off what they have been working on in the AI and ML space. We keep signal high with attendees, attracting employees from many YC startups in London and all the frontier labs, [OpenAI](https://openai.com), [DeepMind](https://deepmind.com), [Anthropic](https://anthropic.com), xAI etc.
+	AI Demo Nights is a community of **Engineers**, **Builders** & Super early **Founders**, a curated set of builders demo what they have been working on in AI & ML. We curate high signal attendees, attracting Founders & Operators from [YC](https://ycombinator.com) startups, VC backed Unicorns & frontier labs, [OpenAI](https://openai.com), [DeepMind](https://deepmind.com), [Anthropic](https://anthropic.com), xAI etc.
 
-4-min live demos. 4-min Q&A. No slides. Live demos only. [Register now](https://lu.ma/london-ai "icon-lg")
+	LIVE Lightning demos. No slides.
 `;
 </script>
 
@@ -23,9 +25,28 @@
 	<div class="mx-auto max-w-4xl">
 		<h1 class="text-4xl font-bold tracking-tight text-foreground md:text-6xl">AI DEMO NIGHTS</h1>
 		<DevMarkdown markdown={aboutMarkdown} class="mt-4 text-lg" />
-		<div class="mt-6 flex items-center gap-3">
-			<span class="inline-block h-2 w-2 bg-accent"></span>
-			<span class="text-sm text-muted-foreground">Next event: TBC</span>
+		<div class="mt-6 text-sm font-normal text-muted-foreground">
+			<span class="inline-flex items-center text-muted-foreground">
+				<span class="mr-2 inline-flex h-3 w-1.5 rounded-full bg-accent"></span>
+				<span>NEXT EVENT:</span>
+			</span>
+			<a
+				href={nextEventUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="ml-1 font-normal text-foreground"
+			>
+				{nextEventTitle}
+			</a>
+			<span class="mx-2 text-muted-foreground">/</span>
+			<a
+				href={nextEventUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-normal text-accent underline-offset-2 hover:underline"
+			>
+				Register now →
+			</a>
 		</div>
 	</div>
 </section>
@@ -34,13 +55,13 @@
 <section class="border-b border-border px-6 py-12">
 	<div class="mx-auto grid max-w-4xl gap-px bg-border md:grid-cols-3">
 		<a
-			href="https://lu.ma/london-ai"
+			href={nextEventUrl}
 			target="_blank"
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
 			<span class="text-xs font-medium tracking-wider text-accent uppercase">Events</span>
-			<span class="text-sm text-foreground">Subscribe to the Luma Calendar →</span>
+			<span class="text-sm text-foreground">Next event registration →</span>
 			<span class="text-xs text-muted-foreground">lu.ma/london-ai</span>
 		</a>
 		<a

@@ -18,6 +18,7 @@ export type DemoNightEvent = {
 	date: string;
 	venue?: string;
 	lumaUrl?: string;
+	title?: string;
 	demos: Demo[];
 };
 
@@ -112,6 +113,7 @@ const getDemoMetadata = (demo: Demo): typeof demoMetadata[number] | undefined =>
 
 export const nextEvent = {
 	number: 9,
+	title: 'AI Demo Nights',
 	date: '2026-02-17',
 	lumaUrl: 'https://luma.com/ejtr9u92'
 };
