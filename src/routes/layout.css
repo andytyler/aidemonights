@@ -119,3 +119,231 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.dn-root {
+	--dn-bg: #0a0a0a;
+	--dn-text: #e5e5e5;
+	--dn-muted: #737373;
+	--dn-accent: #ff4500;
+	--dn-border: #2a2a2a;
+	--dn-surface: #141414;
+
+	font-family: 'JetBrains Mono', ui-monospace, monospace;
+	background-color: var(--dn-bg);
+	color: var(--dn-text);
+}
+
+.dn-body {
+	background-color: var(--dn-bg) !important;
+}
+
+.dn-root * {
+	border-radius: 0 !important;
+}
+
+.dn-text {
+	color: var(--dn-text);
+}
+
+.dn-muted {
+	color: var(--dn-muted);
+}
+
+.dn-accent {
+	color: var(--dn-accent);
+}
+
+.dn-color-bg {
+	color: var(--dn-bg);
+}
+
+.dn-color-border {
+	color: var(--dn-border);
+}
+
+.bg-surface {
+	background-color: var(--dn-surface);
+}
+
+.dn-bg-border {
+	background-color: var(--dn-border);
+}
+
+.dn-bg-accent {
+	background-color: var(--dn-accent);
+}
+
+.dn-border {
+	border-color: var(--dn-border);
+}
+
+.dn-accent-border {
+	border-color: var(--dn-accent);
+}
+
+.dn-divider {
+	border-bottom: 1px solid var(--dn-border);
+}
+
+.dev-markdown p {
+	margin: 0;
+	color: var(--dn-muted);
+	line-height: 1.5;
+}
+
+.dev-markdown p + p {
+	margin-top: 0.5rem;
+}
+
+.dev-markdown .dev-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	color: var(--dn-text);
+	text-decoration: none;
+}
+
+.dev-markdown .dev-link span {
+	text-decoration: underline;
+	text-decoration-color: rgba(229, 229, 229, 0.6);
+	text-underline-offset: 2px;
+}
+
+.dev-markdown .dev-link:hover {
+	color: var(--dn-accent);
+}
+
+.dev-markdown .dev-link:hover span {
+	text-decoration-color: var(--dn-accent);
+}
+
+.dev-markdown .dev-link-icon {
+	width: 0.95rem;
+	height: 0.95rem;
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+.dev-markdown .link-size-lg .dev-link-icon {
+	width: 1.05rem;
+	height: 1.05rem;
+}
+
+.dev-markdown .link-size-sm .dev-link-icon {
+	width: 0.75rem;
+	height: 0.75rem;
+}
+
+.dev-markdown .link-list {
+	list-style: none;
+	margin: 0.5rem 0 0;
+	padding-left: 0;
+	display: grid;
+	gap: 0.5rem;
+}
+
+.dev-markdown .link-list li {
+	margin: 0;
+}
+
+.dev-markdown code {
+	color: var(--dn-text);
+	font-family: inherit;
+	background-color: rgba(255, 69, 0, 0.08);
+	padding: 0.05rem 0.25rem;
+	border: 1px solid rgba(255, 69, 0, 0.25);
+}
+
+.dev-markdown strong {
+	font-weight: 600;
+	color: var(--dn-text);
+}
+
+.dn-bg {
+	background-color: var(--dn-bg);
+}
+
+.dn-on-accent-text {
+	color: rgba(10, 10, 10, 0.6);
+}
+
+.dn-glow-surface-sm {
+	background: linear-gradient(135deg, rgba(255, 69, 0, 0.03) 0%, transparent 60%);
+}
+
+.dn-glow-surface-md {
+	background: linear-gradient(180deg, rgba(255, 69, 0, 0.04) 0%, transparent 50%);
+}
+
+.dn-glow-surface-lg {
+	background: linear-gradient(
+		135deg,
+		rgba(255, 69, 0, 0.08) 0%,
+		transparent 40%,
+		transparent 60%,
+		rgba(255, 69, 0, 0.04) 100%
+	);
+}
+
+.dn-accent-bar {
+	background: linear-gradient(to right, var(--dn-accent), transparent);
+}
+
+.card-enter,
+.benefit-enter,
+.partner-enter,
+.step-enter {
+	animation: dnFadeIn 0.35s ease-out both;
+}
+
+.stat-enter {
+	animation: dnFadeIn 0.4s ease-out both;
+}
+
+.cofounder-step-number {
+	color: var(--dn-border);
+	transition: color 0.3s;
+}
+
+.group:hover .cofounder-step-number {
+	color: var(--dn-accent);
+}
+
+.dn-shimmer {
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		rgba(255, 255, 255, 0.08) 50%,
+		transparent 100%
+	);
+	pointer-events: none;
+}
+
+.cta-strip:hover .dn-shimmer {
+	animation: dnShimmerSlide 0.6s ease-out forwards;
+}
+
+@keyframes dnFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes dnShimmerSlide {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 100%;
+	}
+}

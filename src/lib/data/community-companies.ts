@@ -5,27 +5,79 @@ export type AffiliationTag = {
 
 export type CommunityCompany = {
 	name: string;
-	logo?: string; // path to logo SVG in /static/community/
-	oneLiner: string; // max ~50 chars
+	wordmark_url?: string; // clear logo/wordmark URL
+	website_url?: string;
+	one_liner: string; // max ~50 chars
 	affiliation?: AffiliationTag;
 	featured?: boolean; // true = shows on main page preview
-	founderName?: string;
 };
 
 export const communityCompanies: CommunityCompany[] = [
 	{
 		name: 'Atla',
-		logo: '/sponsors/atla.svg',
-		oneLiner: 'AI evaluation platform for LLM systems',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
 		affiliation: { label: 'YC W25' },
-		featured: true,
-		founderName: 'Henry Broomfield'
+		featured: true
+	},
+	{
+		name: 'Atla',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
+		affiliation: { label: 'YC W25' },
+		featured: true
+	},
+	{
+		name: 'Atla',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
+		affiliation: { label: 'YC W25' },
+		featured: true
+	},
+	{
+		name: 'Atla',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
+		affiliation: { label: 'YC W25' },
+		featured: true
+	},
+	{
+		name: 'Atla',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
+		affiliation: { label: 'YC W25' },
+		featured: true
+	},
+	{
+		name: 'Atla',
+		website_url: 'https://atla-ai.com/',
+		wordmark_url:
+			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
+		one_liner: 'AI evaluation platform for LLM systems',
+		affiliation: { label: 'YC W25' },
+		featured: true
+	},
+	{
+		name: 'Prodia',
+		website_url: 'https://prodia.com/',
+		wordmark_url: 'https://geticon.io/img?url=https://prodia.com',
+		one_liner: 'worlds fastest AI media imferences',
+		featured: true
 	},
 	{
 		name: 'ventrue',
-		oneLiner: 'Helping engineers replace project managers',
-		featured: true,
-		founderName: 'Kindred Salway'
+		one_liner: 'Helping engineers replace project managers',
+		featured: true
 	}
 ];
 

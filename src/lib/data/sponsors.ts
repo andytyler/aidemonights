@@ -10,39 +10,53 @@ export type Sponsor = {
 
 export const sponsors: Sponsor[] = [
 	{
-		name: 'Anthropic',
-		url: 'https://anthropic.com',
+		name: 'Bright Data',
+		url: 'https://brightdata.com',
 		tier: 'headline',
-		logo: '/sponsors/anthropic.svg',
-		tagline: 'AI research and safety'
+		tagline: 'Real-time web data infrastructure for AI'
 	},
 	{
-		name: 'Vercel',
-		url: 'https://vercel.com',
+		name: 'CoLoop',
+		url: 'https://coloop.ai',
 		tier: 'partner',
-		logo: '/sponsors/vercel.svg',
-		tagline: 'Frontend cloud platform'
+		logo: '/sponsors/coloop.png',
+		tagline: 'Partner'
 	},
 	{
-		name: 'Supabase',
-		url: 'https://supabase.com',
+		name: 'Prodia',
+		url: 'https://prodia.com',
 		tier: 'partner',
-		logo: '/sponsors/supabase.svg',
-		tagline: 'Open source Firebase alternative'
+		tagline: 'Partner'
 	},
 	{
-		name: 'Atla',
-		url: 'https://atla-ai.com',
-		tier: 'community',
-		logo: '/sponsors/atla.svg',
-		tagline: 'AI evaluation platform'
+		name: 'MMC',
+		url: '',
+		tier: 'partner',
+		tagline: 'VC partner'
 	},
 	{
-		name: 'Founders House',
-		url: 'https://foundershouse.co',
+		name: 'Slush',
+		url: 'https://www.slush.org',
+		tier: 'partner',
+		tagline: 'Partner'
+	},
+	{
+		name: 'Encode Hub',
+		url: '',
 		tier: 'community',
-		logo: '/sponsors/founders-house.svg',
-		tagline: 'London co-working'
+		tagline: 'Community partner'
+	},
+	{
+		name: 'Idea London',
+		url: '',
+		tier: 'community',
+		tagline: 'Community partner'
+	},
+	{
+		name: 'Side Projects',
+		url: '',
+		tier: 'community',
+		tagline: 'Sister community'
 	}
 ];
 

@@ -6,27 +6,16 @@
 </script>
 
 <div class="space-y-8">
-	<div class="border-l-2 pl-6" style="border-color: var(--dn-accent);">
-		<p class="text-lg font-semibold" style="color: var(--dn-text);">
-			Built by our community.
-		</p>
-		<p class="mt-2 text-sm" style="color: var(--dn-muted);">
-			Startups and projects from AI Demo Nights members.
-		</p>
+	<div class="dn-accent-border border-l-2 pl-6">
+		<p class="dn-text text-lg font-semibold">Built by our community.</p>
+		<p class="dn-muted mt-2 text-sm">Startups and projects from AI Demo Nights members.</p>
 	</div>
 
-	<div class="grid gap-px md:grid-cols-2" style="background-color: var(--dn-border);">
-		{#each companies as company, i}
+	<div
+		class="grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+	>
+		{#each companies as company, i (i)}
 			<CommunityCompanyCard {company} index={i} />
 		{/each}
 	</div>
-
-	<a
-		href="/aidemonights/community"
-		class="group inline-flex items-center gap-2 text-sm transition-colors"
-		style="color: var(--dn-muted);"
-	>
-		See all community companies
-		<span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
-	</a>
 </div>

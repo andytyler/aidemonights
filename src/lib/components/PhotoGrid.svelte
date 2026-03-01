@@ -1,10 +1,43 @@
-<div class="grid grid-cols-2 gap-px md:grid-cols-3 lg:grid-cols-4" style="background-color: var(--dn-border);">
-	{#each Array(8) as _, i}
-		<div
-			class="flex aspect-square items-center justify-center"
-			style="background-color: var(--dn-surface);"
-		>
-			<span class="text-xs" style="color: var(--dn-muted);">Photo {i + 1}</span>
+<script lang="ts">
+	const photoModules = import.meta.glob('../assets/images/*.{avif,gif,jpeg,jpg,png,webp}', {
+		eager: true,
+		query: { enhanced: true }
+	});
+
+	type PhotoSource = {
+		img?: {
+			src?: string;
+			w?: number;
+			h?: number;
+		};
+		sources?: Record<string, string>;
+	};
+
+	type PhotoModule = {
+		default: PhotoSource;
+	};
+
+	const photos = Object.entries(photoModules as Record<string, PhotoModule>)
+		.sort(([a], [b]) => a.localeCompare(b))
+		.map(([path, module]) => ({
+			src: module.default,
+			alt:
+				path
+					.split('/')
+					.pop()
+					?.replace(/\.[^/.]+$/, '') ?? 'Photo'
+		}));
+</script>
+
+<div class="dn-bg-border grid grid-cols-2 gap-px md:grid-cols-3 lg:grid-cols-4">
+	{#each photos as photo (photo.src)}
+		<div class="dn-bg-surface aspect-square overflow-hidden">
+			<enhanced:img
+				src={photo.src}
+				alt={photo.alt}
+				class="block h-full w-full object-cover"
+				loading="lazy"
+			/>
 		</div>
 	{/each}
 </div>

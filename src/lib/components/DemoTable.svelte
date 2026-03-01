@@ -1,7 +1,19 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { normalizeProjectUrl } from '$lib/data/demos';
 	import type { Demo } from '$lib/data/demos';
 
-	let { demos }: { demos: Demo[] } = $props();
+	let {
+		demos,
+		columnMode = 'date',
+		showAvatar = false
+	}: { demos: Demo[]; columnMode?: 'date' | 'night'; showAvatar?: boolean } = $props();
+
+	const hasDisplayUrl = (rawUrl: string): boolean => rawUrl.trim().length > 0;
+	const normalizeSocialUrl = (rawUrl: string): string => normalizeProjectUrl(rawUrl);
+
+	let profileImages: Record<string, string> = $state({});
+	let profileImageStatus: Record<string, 'loading' | 'ready' | 'empty'> = $state({});
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-GB', {
@@ -10,37 +22,95 @@
 			year: 'numeric'
 		});
 	}
+
+	const avatarKey = (demo: Demo): string => `${demo.eventNumber ?? 'unknown'}:${demo.name}:${demo.title}`;
+
+	onMount(() => {
+		for (const demo of demos) {
+			const linkedInUrl = normalizeSocialUrl(demo.linkedIn || '');
+			if (!linkedInUrl) {
+				profileImageStatus[avatarKey(demo)] = 'empty';
+				continue;
+			}
+
+			void (async () => {
+				try {
+					const response = await fetch(`/api/link-preview?url=${encodeURIComponent(linkedInUrl)}`);
+					if (!response.ok) {
+						profileImageStatus[avatarKey(demo)] = 'empty';
+						return;
+					}
+
+					const data = await response.json();
+					if (data.image) {
+						profileImages[avatarKey(demo)] = data.image;
+						profileImageStatus[avatarKey(demo)] = 'ready';
+						return;
+					}
+					profileImageStatus[avatarKey(demo)] = 'empty';
+				} catch {
+					profileImageStatus[avatarKey(demo)] = 'empty';
+				}
+			})();
+		}
+	});
 </script>
 
 <div class="overflow-x-auto">
-	<table class="w-full text-left text-sm" style="border-collapse: collapse;">
+	<table class="w-full text-left text-sm border-collapse">
 		<thead>
-			<tr style="border-bottom: 1px solid var(--dn-border);">
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider" style="color: var(--dn-muted);">Date</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider" style="color: var(--dn-muted);">Name</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider" style="color: var(--dn-muted);">Demo</th>
-				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider" style="color: var(--dn-muted);">Link</th>
+			<tr class="dn-divider">
+				{#if showAvatar}
+					<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">
+						Person
+					</th>
+				{/if}
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">
+					{columnMode === 'night' ? 'Night' : 'Date'}
+				</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Name</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Demo</th>
+				<th class="px-4 py-3 text-xs font-medium uppercase tracking-wider dn-muted">Link</th>
 			</tr>
 		</thead>
 		<tbody>
 			{#each demos as demo}
-				<tr style="border-bottom: 1px solid var(--dn-border);">
-					<td class="px-4 py-3 text-nowrap" style="color: var(--dn-muted);">{formatDate(demo.date)}</td>
-					<td class="px-4 py-3" style="color: var(--dn-text);">{demo.name}</td>
+				<tr class="dn-divider">
+					{#if showAvatar}
+						<td class="px-4 py-3">
+							{#if profileImageStatus[avatarKey(demo)] === 'ready' && profileImages[avatarKey(demo)]}
+								<img
+									src={profileImages[avatarKey(demo)]}
+									alt={demo.name}
+									class="h-10 w-10 rounded-full object-cover grayscale"
+									loading="lazy"
+								/>
+							{:else}
+								<div class="h-10 w-10 rounded-full border dn-border dn-bg-surface"></div>
+							{/if}
+						</td>
+					{/if}
+					<td class="px-4 py-3 text-nowrap dn-muted">
+						{columnMode === 'night' ? `#${demo.eventNumber ?? '-'}` : formatDate(demo.date)}
+					</td>
+					<td class="px-4 py-3 dn-text">{demo.name}</td>
 					<td class="px-4 py-3">
-						<div style="color: var(--dn-text);">{demo.title}</div>
-						<div class="mt-1 text-xs" style="color: var(--dn-muted);">{demo.description}</div>
+						<div class="dn-text">{demo.title}</div>
+						<div class="mt-1 text-xs dn-muted">{demo.description}</div>
 					</td>
 					<td class="px-4 py-3">
-						<a
-							href={demo.projectUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="text-xs underline transition-colors"
-							style="color: var(--dn-accent);"
-						>
-							View →
-						</a>
+						{#if hasDisplayUrl(demo.displayProjectUrl || '')}
+							<a
+								href={demo.displayProjectUrl}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-xs underline transition-colors dn-accent"
+							>
+								View →
+							</a>
+						{:else}
+							<span class="text-xs dn-muted">Not published</span>
+						{/if}
 					</td>
 				</tr>
 			{/each}

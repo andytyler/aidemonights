@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/Header.svelte';
 	import SEO from '$lib/utils/seo/SEO.svelte';
+	import './layout.css';
 
 	let { children }: { children: any } = $props();
 
@@ -24,30 +25,7 @@
 
 <SEO />
 
-<div
-	class="dn-root min-h-screen"
-	style="
-		--dn-bg: #0A0A0A;
-		--dn-text: #E5E5E5;
-		--dn-muted: #737373;
-		--dn-accent: #FF4500;
-		--dn-border: #2A2A2A;
-		--dn-surface: #141414;
-		font-family: 'JetBrains Mono', ui-monospace, monospace;
-		background-color: var(--dn-bg);
-		color: var(--dn-text);
-	"
->
+<div class="dn-root min-h-screen">
 	<Header />
 	{@render children()}
 </div>
-
-<style>
-	:global(.dn-body) {
-		background-color: #0a0a0a !important;
-	}
-
-	.dn-root :global(*) {
-		border-radius: 0 !important;
-	}
-</style>

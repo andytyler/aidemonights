@@ -19,27 +19,23 @@
 			href={sponsor.url}
 			target="_blank"
 			rel="noopener noreferrer"
-			class="headline-block group relative block overflow-hidden"
-			style="background-color: var(--dn-surface);"
+			class="headline-block group relative block overflow-hidden dn-bg-surface"
 		>
 			<div class="noise-overlay"></div>
 
 			<div
-				class="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-				style="background: linear-gradient(135deg, rgba(255,69,0,0.08) 0%, transparent 40%, transparent 60%, rgba(255,69,0,0.04) 100%);"
+				class="absolute inset-0 dn-glow-surface-lg opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 			></div>
 
 			<div class="relative flex min-h-[220px] flex-col justify-between p-8 md:p-12">
 				<div class="flex items-center justify-between">
 					<span
-						class="text-[10px] font-medium uppercase tracking-[0.3em]"
-						style="color: var(--dn-accent);"
+						class="text-[10px] font-medium uppercase tracking-[0.3em] dn-accent"
 					>
 						Headline Sponsor
 					</span>
 					<span
-						class="text-xs opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
-						style="color: var(--dn-accent);"
+						class="text-xs opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 dn-accent"
 					>
 						Visit →
 					</span>
@@ -54,21 +50,19 @@
 						/>
 					{:else}
 						<span
-							class="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl"
-							style="color: var(--dn-text);"
+							class="text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl dn-text"
 						>
 							{sponsor.name}
 						</span>
 					{/if}
 					{#if sponsor.tagline}
-						<p class="mt-3 text-sm" style="color: var(--dn-muted);">{sponsor.tagline}</p>
+						<p class="mt-3 text-sm dn-muted">{sponsor.tagline}</p>
 					{/if}
 				</div>
 			</div>
 
 			<div
-				class="h-[3px] w-0 transition-all duration-700 ease-out group-hover:w-full"
-				style="background: linear-gradient(to right, var(--dn-accent), transparent);"
+				class="h-[3px] dn-accent-bar w-0 transition-all duration-700 ease-out group-hover:w-full"
 			></div>
 		</a>
 	{/each}
@@ -76,18 +70,16 @@
 	<!-- ▌ PARTNERS — logo grid ▌ -->
 	{#if partners.length > 0}
 		<div
-			class="grid gap-px"
-			style="background-color: var(--dn-border); grid-template-columns: repeat({partners.length}, 1fr);"
+			class="grid gap-px dn-bg-border" style="grid-template-columns: repeat({partners.length}, 1fr);"
 		>
 			{#each partners as sponsor}
 				<a
 					href={sponsor.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group relative flex flex-col items-start justify-between overflow-hidden p-6 transition-colors md:p-8"
-					style="background-color: var(--dn-surface);"
+					class="group relative flex flex-col items-start justify-between overflow-hidden p-6 transition-colors md:p-8 dn-bg-surface"
 				>
-					<span class="text-[10px] uppercase tracking-wider" style="color: var(--dn-muted);">Partner</span>
+					<span class="text-[10px] uppercase tracking-wider dn-muted">Partner</span>
 					<div class="mt-6">
 						{#if sponsor.logo}
 							<img
@@ -96,17 +88,16 @@
 								class="partner-logo h-7 w-auto opacity-80 transition-opacity group-hover:opacity-100 md:h-8"
 							/>
 						{:else}
-							<span class="text-lg font-semibold md:text-xl" style="color: var(--dn-text);">
+							<span class="text-lg font-semibold md:text-xl dn-text">
 								{sponsor.name}
 							</span>
 						{/if}
 						{#if sponsor.tagline}
-							<p class="mt-2 text-xs" style="color: var(--dn-muted);">{sponsor.tagline}</p>
+							<p class="mt-2 text-xs dn-muted">{sponsor.tagline}</p>
 						{/if}
 					</div>
 					<div
-						class="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full"
-						style="background-color: var(--dn-accent);"
+						class="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full dn-bg-accent"
 					></div>
 				</a>
 			{/each}
@@ -115,10 +106,9 @@
 
 	<!-- ▌ COMMUNITY — logo strip ▌ -->
 	{#if community.length > 0}
-		<div class="flex flex-wrap items-center gap-px" style="background-color: var(--dn-border);">
+		<div class="flex flex-wrap items-center gap-px dn-bg-border">
 			<span
-				class="px-5 py-4 text-[10px] uppercase tracking-wider"
-				style="background-color: var(--dn-surface); color: var(--dn-muted);"
+				class="px-5 py-4 text-[10px] uppercase tracking-wider dn-bg-surface dn-muted"
 			>
 				Community
 			</span>
@@ -127,8 +117,7 @@
 					href={sponsor.url}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="group flex items-center gap-3 px-5 py-4 transition-colors"
-					style="background-color: var(--dn-surface);"
+					class="group flex items-center gap-3 px-5 py-4 transition-colors dn-bg-surface"
 				>
 					{#if sponsor.logo}
 						<img
@@ -137,7 +126,7 @@
 							class="community-logo h-5 w-auto opacity-60 transition-opacity group-hover:opacity-100"
 						/>
 					{:else}
-						<span class="text-xs" style="color: var(--dn-text);">{sponsor.name}</span>
+						<span class="text-xs dn-text">{sponsor.name}</span>
 					{/if}
 				</a>
 			{/each}
@@ -146,25 +135,24 @@
 
 	<!-- ▌ BECOME A SPONSOR — small CTA ▌ -->
 	<div class="mt-8 flex items-center gap-4">
-		<div class="h-px flex-1" style="background-color: var(--dn-border);"></div>
+		<div class="h-px flex-1 dn-bg-border"></div>
 		<a
 			href="/aidemonights/sponsors"
-			class="group inline-flex items-center gap-2 text-xs transition-colors"
-			style="color: var(--dn-muted);"
+			class="group inline-flex items-center gap-2 text-xs transition-colors dn-muted"
 		>
 			Become a sponsor
-			<span class="transition-transform duration-200 group-hover:translate-x-1" style="color: var(--dn-accent);">→</span>
+			<span class="transition-transform duration-200 group-hover:translate-x-1 dn-accent">→</span>
 		</a>
-		<div class="h-px flex-1" style="background-color: var(--dn-border);"></div>
+		<div class="h-px flex-1 dn-bg-border"></div>
 	</div>
 
 	<!-- ▌ PAST SPONSORS — inline with logos ▌ -->
 	{#if pastSponsors.length > 0}
 		<div class="mt-8 flex items-center gap-6">
-			<span class="shrink-0 text-[10px] uppercase tracking-wider" style="color: var(--dn-muted);">
+			<span class="shrink-0 text-[10px] uppercase tracking-wider dn-muted">
 				Previously sponsored by
 			</span>
-			<div class="h-px flex-1" style="background-color: var(--dn-border);"></div>
+			<div class="h-px flex-1 dn-bg-border"></div>
 			{#each pastSponsors as sponsor}
 				{#if sponsor.logo}
 					{#if sponsor.url}
@@ -187,13 +175,12 @@
 						href={sponsor.url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-xs transition-colors hover:underline"
-						style="color: var(--dn-muted);"
+						class="text-xs transition-colors hover:underline dn-muted"
 					>
 						{sponsor.name}
 					</a>
 				{:else}
-					<span class="text-xs" style="color: var(--dn-muted);">{sponsor.name}</span>
+					<span class="text-xs dn-muted">{sponsor.name}</span>
 				{/if}
 			{/each}
 		</div>
@@ -234,14 +221,4 @@
 		}
 	}
 
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
 </style>

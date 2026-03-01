@@ -13,19 +13,18 @@
 </script>
 
 <!-- Hero -->
-<section class="border-b px-6 py-20" style="border-color: var(--dn-border);">
+<section class="border-b px-6 py-20 dn-border">
 	<div class="mx-auto max-w-4xl">
 		<a
 			href="/"
-			class="mb-6 inline-flex items-center gap-2 text-xs transition-colors"
-			style="color: var(--dn-muted);"
+			class="mb-6 inline-flex items-center gap-2 text-xs transition-colors dn-muted"
 		>
 			← Back to AI Demo Nights
 		</a>
-		<h1 class="text-3xl font-bold tracking-tight md:text-5xl" style="color: var(--dn-text);">
+		<h1 class="text-3xl font-bold tracking-tight md:text-5xl dn-text">
 			Community
 		</h1>
-		<p class="mt-4 text-sm leading-relaxed" style="color: var(--dn-muted);">
+		<p class="mt-4 text-sm leading-relaxed dn-muted">
 			Engineers, builders, and super-early founders shipping in AI. High signal — attendees from
 			frontier labs, YC startups, and the best of London's AI scene.
 		</p>
@@ -33,20 +32,19 @@
 </section>
 
 <!-- Stats -->
-<section class="border-b px-6 py-12" style="border-color: var(--dn-border);">
+<section class="border-b px-6 py-12 dn-border">
 	<div class="mx-auto max-w-4xl">
-		<div class="grid grid-cols-3 gap-px" style="background-color: var(--dn-border);">
+		<div class="grid grid-cols-3 gap-px dn-bg-border">
 			{#each stats as stat, i (stat.label)}
 				<div
-					class="stat-enter p-6 text-center"
-					style="background-color: var(--dn-surface); animation-delay: {i * 80}ms;"
-				>
-					<span class="block text-2xl font-bold md:text-3xl" style="color: var(--dn-accent);">
+				class="stat-enter p-6 text-center dn-bg-surface"
+				style={`animation-delay: ${i * 80}ms;`}
+			>
+					<span class="block text-2xl font-bold md:text-3xl dn-accent">
 						{stat.value}
 					</span>
 					<span
-						class="mt-1 block text-[10px] tracking-wider uppercase"
-						style="color: var(--dn-muted);"
+						class="mt-1 block text-[10px] tracking-wider uppercase dn-muted"
 					>
 						{stat.label}
 					</span>
@@ -57,9 +55,9 @@
 </section>
 
 <!-- Attendees From -->
-<section class="border-b px-6 py-12" style="border-color: var(--dn-border);">
+<section class="border-b px-6 py-12 dn-border">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase" style="color: var(--dn-muted);">
+		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase dn-muted">
 			Attendees From
 		</h2>
 		<AttendeeStrip companies={data.attendeeCompanies} />
@@ -69,30 +67,13 @@
 <!-- All Community Companies -->
 <section class="px-6 py-12">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase" style="color: var(--dn-muted);">
+		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase dn-muted">
 			Community Companies
 		</h2>
-		<div class="grid gap-px md:grid-cols-2" style="background-color: var(--dn-border);">
+		<div class="grid gap-px md:grid-cols-2 dn-bg-border">
 			{#each data.communityCompanies as company, i}
 				<CommunityCompanyCard {company} index={i} />
 			{/each}
 		</div>
 	</div>
 </section>
-
-<style>
-	.stat-enter {
-		animation: fadeIn 0.4s ease-out both;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>

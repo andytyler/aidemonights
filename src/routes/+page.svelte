@@ -1,16 +1,21 @@
 <script lang="ts">
-	import DemoTable from '$lib/components/DemoTable.svelte';
 	import PhotoGrid from '$lib/components/PhotoGrid.svelte';
 	import Membership from '$lib/components/Membership.svelte';
 	import CofounderMatching from '$lib/components/CofounderMatching.svelte';
 	import SponsorsWall from '$lib/components/SponsorsWall.svelte';
-	import AttendeeStrip from '$lib/components/AttendeeStrip.svelte';
 	import CommunityPreview from '$lib/components/CommunityPreview.svelte';
 	import Partners from '$lib/components/Partners.svelte';
+	import DevMarkdown from '$lib/components/DevMarkdown.svelte';
 	import { sponsors, pastSponsors, sponsorLinkedIn } from '$lib/data/sponsors';
 	import type { PageServerData } from './$types';
 
 	let { data }: { data: PageServerData } = $props();
+
+	const aboutMarkdown = `
+	AI Demo Nights is a community of **Engineers**, Builders & Super early founders, we run nights where people a curated set of builders show off what they have been working on in the AI and ML space. We keep signal high with attendees, attracting employees from many YC startups in London and all the frontier labs, [OpenAI](https://openai.com), [DeepMind](https://deepmind.com), [Anthropic](https://anthropic.com), xAI etc.
+
+4-min live demos. 4-min Q&A. No slides. Live demos only. [Register now](https://lu.ma/london-ai "icon-lg")
+`;
 </script>
 
 <!-- Hero -->
@@ -19,12 +24,7 @@
 		<h1 class="text-4xl font-bold tracking-tight md:text-6xl" style="color: var(--dn-text);">
 			AI DEMO NIGHTS
 		</h1>
-		<p class="mt-4 text-lg" style="color: var(--dn-muted);">
-			A monthly AI project showcase in London. Demo what you've built, see what others are building.
-		</p>
-		<p class="mt-2 text-sm" style="color: var(--dn-muted);">
-			4-min live demos. 4-min Q&amp;A. No slides. Live demos only.
-		</p>
+		<DevMarkdown markdown={aboutMarkdown} class="mt-4 text-lg" />
 		<div class="mt-6 flex items-center gap-3">
 			<span class="inline-block h-2 w-2" style="background-color: var(--dn-accent);"></span>
 			<span class="text-sm" style="color: var(--dn-muted);">Next event: TBC</span>
@@ -77,23 +77,6 @@
 			<span class="text-sm" style="color: var(--dn-text);">London Starter Guide →</span>
 			<span class="text-xs" style="color: var(--dn-muted);">For startup founders</span>
 		</a>
-	</div>
-</section>
-
-<!-- Attendees From -->
-<section class="border-b px-6 py-12" style="border-color: var(--dn-border);">
-	<div class="mx-auto max-w-4xl">
-		<AttendeeStrip companies={data.attendeeCompanies} />
-	</div>
-</section>
-
-<!-- Demo Catalog -->
-<section class="border-b px-6 py-12" style="border-color: var(--dn-border);">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase" style="color: var(--dn-muted);">
-			Past Demos
-		</h2>
-		<DemoTable demos={data.allDemos} />
 	</div>
 </section>
 

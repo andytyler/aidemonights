@@ -24,8 +24,8 @@ function toIconTarget(url: string): string {
 	return url;
 }
 
-function getIconUrl(url: string): string {
-	return `https://geticon.io/img?url=${encodeURIComponent(toIconTarget(url))}&size=256`;
+export function getIconUrl(url: string): string {
+	return `https://geticon.io/img?url=${toIconTarget(url)}&size=256`;
 }
 
 const LINK_PATTERN = /\[([^\]]+)\]\(([^)\s]+)(?:\s+(?:"([^"]*)"|'([^']*)'))?\)/g;

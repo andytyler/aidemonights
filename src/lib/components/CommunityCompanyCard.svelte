@@ -1,65 +1,78 @@
 <script lang="ts">
 	import type { CommunityCompany } from '$lib/data/community-companies';
+	import { getIconUrl } from '$lib/utils/markdown';
 
 	let { company, index = 0 }: { company: CommunityCompany; index?: number } = $props();
+
+	const website_url = $derived(company.website_url?.trim() || '/');
+	const wordmark_url = company.wordmark_url?.trim() || null;
+
+	const favicon: string | null = $derived(getIconUrl(company.website_url?.trim() || ''));
 </script>
 
 <div
-	class="card-enter group relative overflow-hidden p-6"
-	style="background-color: var(--dn-surface); animation-delay: {index * 60}ms;"
+	class="card-enter group bg-surface relative aspect-square h-full w-full overflow-hidden"
+	style={`animation-delay: ${index * 50}ms;`}
 >
-	<div class="flex items-start gap-4">
-		{#if company.logo}
-			<img
-				src={company.logo}
-				alt={company.name}
-				class="h-8 w-8 shrink-0 object-contain opacity-80"
-			/>
-		{:else}
-			<div
-				class="flex h-8 w-8 shrink-0 items-center justify-center text-xs font-bold"
-				style="background-color: var(--dn-border); color: var(--dn-muted);"
+	<div class="relative h-full w-full">
+		<div class="absolute inset-0 h-full w-full">
+			<a
+				href={website_url}
+				target="_blank"
+				rel="noopener noreferrer external"
+				aria-label={`Visit ${company.name}`}
+				class="group/media grid h-full w-full place-items-center px-4 py-2"
 			>
-				{company.name.charAt(0)}
-			</div>
-		{/if}
-		<div class="min-w-0 flex-1">
-			<span class="text-sm font-medium" style="color: var(--dn-text);">
-				{company.name}
-			</span>
-			<p class="mt-1 text-xs leading-relaxed" style="color: var(--dn-muted);">
-				{company.oneLiner}
-			</p>
+				{#if wordmark_url}
+					<div
+						class="grid h-full w-full place-items-center bg-[color:var(--dn-surface)] px-2 py-1.5"
+					>
+						<img
+							src={wordmark_url}
+							alt={company.name}
+							class="h-full max-h-[94%] w-full max-w-[94%] object-contain"
+							loading="lazy"
+						/>
+					</div>
+				{:else}
+					<div
+						class="grid h-full w-full place-items-center px-2 text-center text-[10px] font-semibold tracking-wide text-[color:var(--dn-text)]"
+					>
+						{company.name}
+					</div>
+				{/if}
+			</a>
+		</div>
+
+		<div class="absolute inset-0 flex h-full w-full flex-col justify-between p-2">
 			{#if company.affiliation}
 				<span
-					class="mt-2 inline-block px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider"
-					style="background-color: var(--dn-border); color: var(--dn-accent);"
+					class="inline-flex shrink-0 items-center bg-card px-1 py-0.5 text-xs font-medium tracking-wider text-accent uppercase"
 				>
 					{company.affiliation.label}
 				</span>
 			{/if}
+			<div class="items-cente flex min-w-0 justify-center gap-1">
+				<span
+					class="text-md flex min-w-0 flex-1 flex-row items-center justify-center gap-1 truncate align-middle font-medium"
+				>
+					<img
+						src={favicon}
+						alt={company.name + 'icon'}
+						class="h-3.5 w-3.5 rounded"
+						loading="lazy"
+						decoding="async"
+					/>
+					{company.name}</span
+				>
+				<p class="mt-1 truncate text-xs leading-tight text-muted">
+					{company.one_liner}
+				</p>
+			</div>
 		</div>
 	</div>
-	<!-- Subtle hover glow -->
+
 	<div
-		class="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-		style="background: linear-gradient(135deg, rgba(255, 69, 0, 0.03) 0%, transparent 60%);"
+		class="dn-glow-surface-sm absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 	></div>
 </div>
-
-<style>
-	.card-enter {
-		animation: fadeIn 0.35s ease-out both;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(8px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-</style>
