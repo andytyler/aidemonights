@@ -102,7 +102,13 @@
 			</span>
 		</div>
 		<div
-			class="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full"
+			class="cofounder-underline absolute bottom-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full"
 		></div>
 	</a>
 </div>
+
+<style>
+	.cofounder-underline {
+		height: 2px;
+	}
+</style>

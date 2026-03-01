@@ -28,10 +28,10 @@
 				style="background: linear-gradient(135deg, var(--accent-soft-8) 0%, transparent 40%, transparent 60%, var(--accent-soft-4) 100%);"
 			></div>
 
-			<div class="relative flex min-h-[220px] flex-col justify-between p-8 md:p-12">
+			<div class="relative flex flex-col justify-between headline-panel p-8 md:p-12">
 				<div class="flex items-center justify-between">
 					<span
-						class="text-[10px] font-medium uppercase tracking-[0.3em] text-accent"
+						class="sponsor-ticker-label"
 					>
 						Headline Sponsor
 					</span>
@@ -63,7 +63,7 @@
 			</div>
 
 			<div
-				class="h-[3px] w-0 transition-all duration-700 ease-out group-hover:w-full"
+				class="line-thick line-gradient transition-all duration-700 ease-out group-hover:w-full"
 				style="background: linear-gradient(to right, var(--accent), transparent);"
 			></div>
 		</a>
@@ -82,7 +82,7 @@
 					rel="noopener noreferrer"
 					class="group relative flex flex-col items-start justify-between overflow-hidden bg-card p-6 transition-colors md:p-8"
 				>
-					<span class="text-[10px] uppercase tracking-wider text-muted-foreground">Partner</span>
+					<span class="sponsor-meta-label">Partner</span>
 					<div class="mt-6">
 						{#if sponsor.logo}
 							<img
@@ -99,9 +99,7 @@
 							<p class="mt-2 text-xs text-muted-foreground">{sponsor.tagline}</p>
 						{/if}
 					</div>
-					<div
-						class="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"
-					></div>
+					<div class="line-thin absolute bottom-0 left-0 w-0 bg-accent transition-all duration-300 group-hover:w-full"></div>
 				</a>
 			{/each}
 		</div>
@@ -111,7 +109,7 @@
 	{#if community.length > 0}
 		<div class="flex flex-wrap items-center gap-px bg-border">
 			<span
-				class="px-5 py-4 text-[10px] uppercase tracking-wider bg-card text-muted-foreground"
+				class="px-5 py-4 sponsor-meta-label bg-card text-muted-foreground"
 			>
 				Community
 			</span>
@@ -152,7 +150,7 @@
 	<!-- ▌ PAST SPONSORS — inline with logos ▌ -->
 	{#if pastSponsors.length > 0}
 		<div class="mt-8 flex items-center gap-6">
-			<span class="shrink-0 text-[10px] uppercase tracking-wider text-muted-foreground">
+			<span class="shrink-0 sponsor-meta-label text-muted-foreground">
 				Previously sponsored by
 			</span>
 			<div class="h-px flex-1 bg-border"></div>
@@ -222,6 +220,34 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+	}
+
+	.headline-panel {
+		min-height: 220px;
+	}
+
+	.sponsor-ticker-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	.sponsor-meta-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.line-thick {
+		height: 3px;
+		width: 0;
+	}
+
+	.line-thin {
+		height: 2px;
 	}
 
 </style>

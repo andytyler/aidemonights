@@ -33,10 +33,19 @@
 						{partner.name}
 					</span>
 				{/if}
-				<span class="mt-3 text-[10px] uppercase tracking-wider text-muted-foreground">
+				<span class="mt-3 section-meta-label text-muted-foreground">
 					{partner.contribution}
 				</span>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	.section-meta-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+</style>

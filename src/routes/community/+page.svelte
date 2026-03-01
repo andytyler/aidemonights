@@ -44,7 +44,7 @@
 						{stat.value}
 					</span>
 					<span
-						class="mt-1 block text-[10px] tracking-wider uppercase text-muted-foreground"
+						class="mt-1 block section-meta-label text-muted-foreground"
 					>
 						{stat.label}
 					</span>
@@ -77,3 +77,12 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.section-meta-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+</style>

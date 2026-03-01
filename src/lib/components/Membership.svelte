@@ -4,9 +4,12 @@
 	const benefits = [
 		{ label: 'Priority RSVP', detail: 'Guaranteed spot before public registration opens' },
 		{ label: 'Demo Slots', detail: 'Members get first pick of demo slots each month' },
-		{ label: 'Cofounder Matching', detail: 'Curated intros with other builders looking for cofounders' },
+		{
+			label: 'Cofounder Matching',
+			detail: 'Curated intros with other builders looking for cofounders'
+		},
 		{ label: 'Recordings', detail: 'Access to full demo recordings and post-event recaps' },
-		{ label: 'Community', detail: 'Private group with London\'s most active AI builders' },
+		{ label: 'Community', detail: "Private group with London's most active AI builders" },
 		{ label: 'Office Hours', detail: 'Monthly 1-on-1s with founders and investors in the network' }
 	];
 </script>
@@ -26,7 +29,7 @@
 	<div class="grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
 		{#each benefits as benefit, i}
 			<div
-				class="group relative overflow-hidden bg-card p-6 benefit-enter"
+				class="group benefit-enter relative overflow-hidden bg-card p-6"
 				style={`animation-delay: ${i * 80}ms;`}
 			>
 				<div class="flex items-start gap-3">
@@ -58,22 +61,22 @@
 	>
 		<div class="flex items-center justify-between">
 			<div>
-				<span class="text-sm font-semibold text-foreground">
-					Become a Member
-				</span>
-				<span class="ml-3 text-xs text-muted-foreground">
-					Sign up on Luma to join
-				</span>
+				<span class="text-sm font-semibold text-foreground"> Become a Member </span>
+				<span class="ml-3 text-xs text-muted-foreground"> Sign up on Luma to join </span>
 			</div>
-			<span
-				class="text-sm text-accent transition-transform duration-200 group-hover:translate-x-1"
-			>
+			<span class="text-sm text-accent transition-transform duration-200 group-hover:translate-x-1">
 				→
 			</span>
 		</div>
 		<!-- Accent line animation -->
 		<div
-			class="absolute bottom-0 left-0 h-[2px] w-0 bg-accent transition-all duration-500 group-hover:w-full"
+			class="accent-underline absolute bottom-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full"
 		></div>
 	</a>
 </div>
+
+<style>
+	.accent-underline {
+		height: 2px;
+	}
+</style>

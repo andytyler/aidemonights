@@ -21,9 +21,7 @@
 <!-- Hero -->
 <section class="border-b border-border px-6 py-20">
 	<div class="mx-auto max-w-4xl">
-		<h1 class="text-4xl font-bold tracking-tight md:text-6xl text-foreground">
-			AI DEMO NIGHTS
-		</h1>
+		<h1 class="text-4xl font-bold tracking-tight text-foreground md:text-6xl">AI DEMO NIGHTS</h1>
 		<DevMarkdown markdown={aboutMarkdown} class="mt-4 text-lg" />
 		<div class="mt-6 flex items-center gap-3">
 			<span class="inline-block h-2 w-2 bg-accent"></span>
@@ -41,7 +39,7 @@
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider uppercase text-accent">Register</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">Register</span>
 			<span class="text-sm text-foreground">Sign up on Luma →</span>
 			<span class="text-xs text-muted-foreground">lu.ma/london-ai</span>
 		</a>
@@ -51,7 +49,7 @@
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider uppercase text-accent">About</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">About</span>
 			<span class="text-sm text-foreground">AI Demo Nights →</span>
 			<span class="text-xs text-muted-foreground">Notion page</span>
 		</a>
@@ -61,7 +59,7 @@
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider uppercase text-accent">Guide</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">Guide</span>
 			<span class="text-sm text-foreground">London Starter Guide →</span>
 			<span class="text-xs text-muted-foreground">For startup founders</span>
 		</a>
@@ -71,7 +69,7 @@
 <!-- Photos -->
 <section class="border-b border-border px-6 py-12">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">Photos</h2>
+		<h2 class="mb-8 text-xs font-medium tracking-wider text-muted-foreground uppercase">Photos</h2>
 		<PhotoGrid />
 	</div>
 </section>
@@ -79,57 +77,17 @@
 <!-- Community Companies -->
 <section class="border-b border-border px-6 py-12">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">
+		<h2 class="mb-8 text-xs font-medium tracking-wider text-muted-foreground uppercase">
 			Community Companies
 		</h2>
 		<CommunityPreview companies={data.featuredCompanies} />
 	</div>
 </section>
 
-<!-- Membership -->
-<section class="border-b border-border px-6 py-12">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">
-			Become a Member
-		</h2>
-		<Membership lumaUrl="https://lu.ma/london-ai" />
-	</div>
-</section>
-
-<!-- Cofounder Matching -->
-<section class="border-b border-border px-6 py-12">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">
-			Cofounder Matching
-		</h2>
-		<CofounderMatching linkedIn={sponsorLinkedIn} />
-	</div>
-</section>
-
-<!-- Partners -->
-<section class="border-b border-border px-6 py-12">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">
-			Partners
-		</h2>
-		<Partners partners={data.partners} />
-	</div>
-</section>
-
-<!-- Sponsors -->
-<section class="border-b border-border px-6 py-12">
-	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-8 text-xs font-medium tracking-wider uppercase text-muted-foreground">
-			Sponsors
-		</h2>
-		<SponsorsWall {sponsors} {pastSponsors} />
-	</div>
-</section>
-
 <!-- Luma Embed -->
 <section class="px-6 py-12">
 	<div class="mx-auto max-w-4xl">
-		<h2 class="mb-6 text-xs font-medium tracking-wider uppercase text-muted-foreground">
+		<h2 class="mb-6 text-xs font-medium tracking-wider text-muted-foreground uppercase">
 			Upcoming Events
 		</h2>
 		<div class="overflow-hidden border border-border">

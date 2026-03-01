@@ -75,7 +75,7 @@
 </script>
 
 <article class="overflow-hidden border border-border bg-card">
-	<div class="grid gap-4 border-b p-5 md:grid-cols-[auto,1fr] border-border">
+	<div class="demo-project-grid gap-4 border-b p-5 border-border">
 			<div class="flex items-start gap-4">
 			{#if profileLoadingState === 'ready' && profileImage}
 				<img
@@ -129,7 +129,7 @@
 			<a href={projectUrl} target="_blank" rel="noopener noreferrer" class="block p-4 transition-colors">
 				<div class="flex gap-4">
 					{#if preview.image}
-						<div class="w-full max-w-[220px] flex-none">
+						<div class="w-full demo-project-preview">
 							<img src={preview.image} alt={preview.title} class="h-28 w-full object-cover" loading="lazy" />
 						</div>
 					{/if}
@@ -156,3 +156,20 @@
 		<div class="p-4 text-xs text-muted-foreground">No project URL provided.</div>
 	{/if}
 </article>
+
+<style>
+	.demo-project-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.demo-project-preview {
+		max-width: 220px;
+	}
+
+	@media (min-width: 768px) {
+		.demo-project-grid {
+			grid-template-columns: auto 1fr;
+		}
+	}
+</style>

@@ -6,7 +6,7 @@
 
 <div class="flex flex-wrap items-center gap-px bg-border">
 	<span
-		class="shrink-0 px-5 py-4 text-[10px] font-medium tracking-wider uppercase bg-card text-accent"
+		class="shrink-0 px-5 py-4 attendee-label bg-card text-accent"
 	>
 		Attendees from
 	</span>
@@ -20,3 +20,12 @@
 		</span>
 	{/each}
 </div>
+
+<style>
+	.attendee-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+</style>

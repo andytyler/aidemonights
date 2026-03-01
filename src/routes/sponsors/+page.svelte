@@ -76,7 +76,7 @@
 					<span class="block text-2xl font-bold md:text-3xl text-accent">
 						{stat.value}
 					</span>
-					<span class="mt-1 block text-[10px] uppercase tracking-wider text-muted-foreground">
+					<span class="mt-1 block section-meta-label text-muted-foreground">
 						{stat.label}
 					</span>
 				</div>
@@ -84,6 +84,15 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.section-meta-label {
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+</style>
 
 <!-- Tiers -->
 <section class="border-b px-6 py-12 border-border">

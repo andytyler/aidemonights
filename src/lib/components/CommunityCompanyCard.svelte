@@ -14,56 +14,53 @@
 	class="card-enter group relative aspect-square h-full w-full overflow-hidden bg-card"
 	style={`animation-delay: ${index * 50}ms;`}
 >
-	<div class="relative h-full w-full">
-		<div class="absolute inset-0 h-full w-full">
+	<div class="relative flex h-full w-full flex-col">
+		{#if company.affiliation}
+			<span
+				class="absolute top-2 right-2 inline-flex shrink-0 items-center rounded bg-muted px-1 py-[0.3px] text-[9px] font-medium tracking-wider text-muted-foreground uppercase"
+			>
+				{company.affiliation.label}
+			</span>
+		{/if}
+		<div class="relative mt-4 flex h-full w-full items-center justify-center">
 			<a
 				href={website_url}
 				target="_blank"
 				rel="noopener noreferrer external"
 				aria-label={`Visit ${company.name}`}
-				class="group/media grid h-full w-full place-items-center px-4 py-2"
+				class="group/media"
 			>
-				{#if wordmark_url}
-					<div class="grid h-full w-full place-items-center bg-card px-2 py-1.5">
-						<img
-							src={wordmark_url}
-							alt={company.name}
-							class="h-full max-h-[94%] w-full max-w-[94%] object-contain"
-							loading="lazy"
-						/>
-					</div>
-				{:else}
-					<div
-						class="grid h-full w-full place-items-center px-2 text-center text-[10px] font-semibold tracking-wide text-foreground"
-					>
-						{company.name}
-					</div>
-				{/if}
+				<div class="h-full max-h-1/2 w-full place-items-center bg-card px-2 py-1.5">
+					{#if wordmark_url}
+						<img src={wordmark_url} alt={company.name} class="" loading="lazy" />
+					{:else}
+						<span class=" flex flex-row items-center justify-center gap-2 text-2xl font-bold">
+							<img
+								src={favicon}
+								alt={company.name + 'icon'}
+								class="h-5 w-5 rounded"
+								loading="lazy"
+								decoding="async"
+							/>
+							{company.name}
+						</span>
+					{/if}
+				</div>
 			</a>
 		</div>
 
-		<div class="absolute inset-0 h-full w-full p-2">
-			{#if company.affiliation}
+		<div class="flex h-full max-h-min w-full flex-col justify-end">
+			<div
+				class=" flex w-full max-w-full min-w-0 flex-col items-center justify-end gap-1 self-end p-2"
+			>
 				<span
-					class="inline-flex shrink-0 items-center bg-accent px-1 py-0.5 text-xs font-medium tracking-wider text-accent-foreground uppercase"
+					class="flex min-w-0 flex-1 flex-row items-center justify-center truncate align-middle text-xs font-medium text-foreground"
 				>
-					{company.affiliation.label}
+					{company.name}
 				</span>
-			{/if}
-			<div class="flex min-w-0 items-center justify-center gap-1">
-				<span
-					class="flex min-w-0 flex-1 flex-row items-center justify-center gap-1 truncate align-middle text-lg font-medium text-foreground"
+				<p
+					class="line-clamp-2 max-w-full truncate text-center text-[10px] text-balance text-ellipsis text-muted-foreground"
 				>
-					<img
-						src={favicon}
-						alt={company.name + 'icon'}
-						class="h-3.5 w-3.5 rounded"
-						loading="lazy"
-						decoding="async"
-					/>
-					{company.name}</span
-				>
-				<p class="mt-1 truncate text-[10px] leading-tight text-muted-foreground">
 					{company.one_liner}
 				</p>
 			</div>

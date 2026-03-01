@@ -14,7 +14,7 @@ export type CommunityCompany = {
 
 export const communityCompanies: CommunityCompany[] = [
 	{
-		name: 'Atla',
+		name: 'Atla (YC W25)',
 		website_url: 'https://atla-ai.com/',
 		wordmark_url:
 			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
@@ -25,8 +25,6 @@ export const communityCompanies: CommunityCompany[] = [
 	{
 		name: 'Atla',
 		website_url: 'https://atla-ai.com/',
-		wordmark_url:
-			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
 		one_liner: 'AI evaluation platform for LLM systems',
 		affiliation: { label: 'YC W25' },
 		featured: true
@@ -70,7 +68,6 @@ export const communityCompanies: CommunityCompany[] = [
 	{
 		name: 'Prodia',
 		website_url: 'https://prodia.com/',
-		wordmark_url: 'https://geticon.io/img?url=https://prodia.com',
 		one_liner: 'worlds fastest AI media imferences',
 		featured: true
 	},

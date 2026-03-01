@@ -9,8 +9,8 @@
 	<div class="border-l-2 border-accent pl-6">
 		<p class="text-lg font-semibold text-foreground">Built by our community.</p>
 		<p class="mt-2 text-sm text-muted-foreground">
-			Startups and projects from AI Demo Nights members.
-	</p>
+			Startups and projects our members are Founders & Operators of.
+		</p>
 	</div>
 
 	<div
