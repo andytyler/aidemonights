@@ -39,19 +39,21 @@
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider text-accent uppercase">Register</span>
-			<span class="text-sm text-foreground">Sign up on Luma →</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">Events</span>
+			<span class="text-sm text-foreground">Subscribe to the Luma Calendar →</span>
 			<span class="text-xs text-muted-foreground">lu.ma/london-ai</span>
 		</a>
 		<a
-			href="https://andytyler.notion.site/AI-Demo-Nights-EVENT-SERIES-2719000e0d994de7adbbd988f3e465f7"
+			href="https://andytyler.notion.site/29117e20aa648069acc1ea84671da1f8?pvs=105"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider text-accent uppercase">About</span>
-			<span class="text-sm text-foreground">AI Demo Nights →</span>
-			<span class="text-xs text-muted-foreground">Notion page</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase"
+				>Co-Founder Matching</span
+			>
+			<span class="text-sm text-foreground">Let us know you are looking for a co-founder →</span>
+			<span class="text-xs text-muted-foreground">Future Co-Founder Matching Events</span>
 		</a>
 		<a
 			href="https://andytyler.notion.site/The-Starter-Guide-to-London-for-Startup-Founders-1c617e20aa648006a12ce401bbe04d99"
@@ -59,9 +61,19 @@
 			rel="noopener noreferrer"
 			class="group flex flex-col gap-2 bg-card p-6 transition-colors"
 		>
-			<span class="text-xs font-medium tracking-wider text-accent uppercase">Guide</span>
-			<span class="text-sm text-foreground">London Starter Guide →</span>
-			<span class="text-xs text-muted-foreground">For startup founders</span>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">Founder Guide</span>
+			<span class="text-sm text-foreground">Start Up Founder Guide →</span>
+			<span class="text-xs text-muted-foreground">For London startup founders</span>
+		</a>
+		<a
+			href="https://andytyler.notion.site/17317e20aa6480ed9f5ce431837e88bf"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="group col-span-3 flex flex-col gap-2 bg-card p-6 transition-colors"
+		>
+			<span class="text-xs font-medium tracking-wider text-accent uppercase">Request to Demo</span>
+			<span class="text-sm text-foreground">Submit a demo request →</span>
+			<span class="text-xs text-muted-foreground">For the next demo night</span>
 		</a>
 	</div>
 </section>
@@ -75,7 +87,7 @@
 </section>
 
 <!-- Community Companies -->
-<section class="border-b border-border px-6 py-12">
+<section class="border-b border-border px-6 py-12" id="community">
 	<div class="mx-auto max-w-4xl">
 		<h2 class="mb-8 text-xs font-medium tracking-wider text-muted-foreground uppercase">
 			Community Companies
@@ -85,7 +97,7 @@
 </section>
 
 <!-- Luma Embed -->
-<section class="px-6 py-12">
+<section class="px-6 py-12" id="events">
 	<div class="mx-auto max-w-4xl">
 		<h2 class="mb-6 text-xs font-medium tracking-wider text-muted-foreground uppercase">
 			Upcoming Events

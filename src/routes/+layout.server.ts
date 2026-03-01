@@ -6,7 +6,9 @@ export const load: LayoutServerLoad = async () => {
 			title: 'AI Demo Nights — London',
 			description:
 				'A monthly AI project showcase in London. Demo what you built, see what others are building.',
-			url: 'https://ajt.dev/aidemonights',
+			url: 'https://github.com/andytyler/aidemonights',
+			image: '/icon.png',
+			siteName: 'AI Demo Nights',
 			type: 'website'
 		}
 	};

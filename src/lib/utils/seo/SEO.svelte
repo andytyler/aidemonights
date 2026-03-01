@@ -2,15 +2,18 @@
 	import { page } from '$app/state';
 
 	const defaultSEO = {
-		title: 'AJT.dev - Full Stack Developer',
+		title: 'AI Demo Nights — London',
 		description:
-			'Personal website of AJT - Full Stack Developer specializing in modern web technologies, SvelteKit, and innovative digital solutions.',
-		image: '/og-image.jpg',
-		url: 'https://ajt.dev',
-		siteName: 'AJT.dev',
+			'A monthly AI project showcase in London. Demo what you built, see what others are building.',
+		image: '/icon.png',
+		url: 'https://github.com/andytyler/aidemonights',
+		siteName: 'AI Demo Nights',
 		type: 'website',
 		twitterCard: 'summary_large_image',
-		twitterSite: '@ajt_dev'
+		twitterSite: '@ajt_dev',
+		author: 'AI Demo Nights',
+		robots: 'index, follow',
+		themeColor: '#ff4500'
 	};
 
 	const seodata = { ...defaultSEO, ...page.data.seo };
@@ -69,5 +72,7 @@
 
 	<!-- Additional SEO -->
 	<meta name="theme-color" content={themeColor} />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="any" href="/icon.png" />
+	<link rel="apple-touch-icon" href="/icon.png" />
 </svelte:head>
