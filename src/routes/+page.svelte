@@ -16,7 +16,9 @@
 	const aboutMarkdown = `
 	AI Demo Nights is a community of **Engineers**, **Builders** & Super early **Founders**, a curated set of builders demo what they have been working on in AI & ML. We curate high signal attendees, attracting Founders & Operators from [YC](https://ycombinator.com) startups, VC backed Unicorns & frontier labs, [OpenAI](https://openai.com), [DeepMind](https://deepmind.com), [Anthropic](https://anthropic.com), xAI etc.
 
+
 	LIVE Lightning demos. No slides.
+
 `;
 </script>
 

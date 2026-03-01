@@ -1,6 +1,5 @@
 export type AffiliationTag = {
 	label: string; // "YC W25", "Sequoia-backed"
-	icon?: string; // optional path to small icon
 };
 
 export type CommunityCompany = {
@@ -14,6 +13,12 @@ export type CommunityCompany = {
 
 export const communityCompanies: CommunityCompany[] = [
 	{
+		name: 'Prodia',
+		website_url: 'https://prodia.com/',
+		one_liner: 'Worlds fastest AI media imferences',
+		featured: true
+	},
+	{
 		name: 'Atla (YC W25)',
 		website_url: 'https://atla-ai.com/',
 		wordmark_url:
@@ -23,57 +28,10 @@ export const communityCompanies: CommunityCompany[] = [
 		featured: true
 	},
 	{
-		name: 'Atla',
-		website_url: 'https://atla-ai.com/',
-		one_liner: 'AI evaluation platform for LLM systems',
-		affiliation: { label: 'YC W25' },
-		featured: true
-	},
-	{
-		name: 'Atla',
-		website_url: 'https://atla-ai.com/',
-		wordmark_url:
-			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
-		one_liner: 'AI evaluation platform for LLM systems',
-		affiliation: { label: 'YC W25' },
-		featured: true
-	},
-	{
-		name: 'Atla',
-		website_url: 'https://atla-ai.com/',
-		wordmark_url:
-			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
-		one_liner: 'AI evaluation platform for LLM systems',
-		affiliation: { label: 'YC W25' },
-		featured: true
-	},
-	{
-		name: 'Atla',
-		website_url: 'https://atla-ai.com/',
-		wordmark_url:
-			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
-		one_liner: 'AI evaluation platform for LLM systems',
-		affiliation: { label: 'YC W25' },
-		featured: true
-	},
-	{
-		name: 'Atla',
-		website_url: 'https://atla-ai.com/',
-		wordmark_url:
-			'https://cdn.prod.website-files.com/66598898fd13d51606c3215d/68c16e564505670f18b925c1_logo-updated.svg',
-		one_liner: 'AI evaluation platform for LLM systems',
-		affiliation: { label: 'YC W25' },
-		featured: true
-	},
-	{
-		name: 'Prodia',
-		website_url: 'https://prodia.com/',
-		one_liner: 'worlds fastest AI media imferences',
-		featured: true
-	},
-	{
-		name: 'ventrue',
-		one_liner: 'Helping engineers replace project managers',
+		name: 'CoLoop',
+		website_url: 'https://www.coloop.ai',
+		one_liner: 'Turn raw qualitative data into strategic insights faster',
+		affiliation: { label: 'YC S21' },
 		featured: true
 	}
 ];
